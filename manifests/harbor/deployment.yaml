@@ -44731,8 +44731,8 @@ data:
     httpport = 8080
   jobservice-config.yaml.tmpl: |
     {{/*
-      https://github.com/goharbor/harbor/blob/master/make/photon/prepare/templates/jobservice/config.yml.jinja
-      https://github.com/goharbor/harbor/blob/master/src/jobservice/config/config.go#L63
+      https://github.com/goharbor/harbor/blob/main/make/photon/prepare/templates/jobservice/config.yml.jinja
+      https://github.com/goharbor/harbor/blob/main/src/jobservice/config/config.go#L63
     */}}
     {{- if .Spec.TLS.Enabled }}
     protocol: "https"
@@ -45207,7 +45207,7 @@ spec:
               fieldPath: metadata.namespace
         - name: CONFIGURATION_FROM
           value: env,file:/etc/harbor-operator/config.yaml
-        image: ghcr.io/goharbor/harbor-operator:dev_master
+        image: ghcr.io/goharbor/harbor-operator:dev
         livenessProbe:
           httpGet:
             path: /healthz
